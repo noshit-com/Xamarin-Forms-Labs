@@ -44,6 +44,11 @@ namespace XLabs.Forms.Controls
 		/// <returns>UICollectionViewCell.</returns>
 		public override UICollectionViewCell CellForItem(NSIndexPath indexPath)
 		{
+            if (indexPath == null)
+            {
+                return null;
+            }
+
 			return base.CellForItem(indexPath);
 		}
 
