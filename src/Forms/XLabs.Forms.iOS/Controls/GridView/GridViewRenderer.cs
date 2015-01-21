@@ -201,6 +201,11 @@ namespace XLabs.Forms.Controls
 		/// <returns>UICollectionViewCell.</returns>
 		public UICollectionViewCell GetCell (UICollectionView collectionView, NSIndexPath indexPath)
 		{
+            if (indexPath == null)
+            {
+                return null;
+            }
+
 			var item = Element.ItemsSource.Cast<object> ().ElementAt (indexPath.Row);
 			var viewCellBinded = (Element.ItemTemplate.CreateContent () as ViewCell);
 			if (viewCellBinded != null)
