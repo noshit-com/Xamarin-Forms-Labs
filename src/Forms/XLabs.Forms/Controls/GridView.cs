@@ -26,6 +26,11 @@ namespace XLabs.Forms.Controls
 		/// </summary>
 		public static readonly BindableProperty ItemsSourceProperty = BindableProperty.Create ("ItemsSource", typeof(IEnumerable), typeof(GridView), null, BindingMode.OneWay, null, null, null, null);
 
+        /// <summary>
+        /// The selected item property
+        /// </summary>
+        public static readonly BindableProperty SelectedItemProperty = BindableProperty.Create("SelectedItem", typeof(object), typeof(GridView), null, BindingMode.TwoWay, null, null, null, null);
+
 		/// <summary>
 		/// The item template property
 		/// </summary>
@@ -67,7 +72,23 @@ namespace XLabs.Forms.Controls
 			}
 		}
 
-		/// <summary>
+        /// <summary>
+        /// Gets or sets the selected item.
+        /// </summary>
+        /// <value>The selected item.</value>
+        public object SelectedItem
+        {
+            get
+            {
+                return (object)base.GetValue(GridView.SelectedItemProperty);
+            }
+            set
+            {
+                base.SetValue(GridView.SelectedItemProperty, value);
+            }
+        }
+        
+        /// <summary>
 		/// Gets or sets the item template.
 		/// </summary>
 		/// <value>The item template.</value>
@@ -144,7 +165,10 @@ namespace XLabs.Forms.Controls
 		/// <param name="item">Item.</param>
 		public void InvokeItemSelectedEvent (object sender, object item)
 		{
-			if (this.ItemSelected != null) {
+            this.SelectedItem = item;
+            
+            if (this.ItemSelected != null)
+            {
 				this.ItemSelected.Invoke (sender, new EventArgs<object> (item));
 			}
 		}
