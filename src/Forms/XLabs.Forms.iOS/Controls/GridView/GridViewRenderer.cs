@@ -193,7 +193,7 @@ namespace XLabs.Forms.Controls
 		/// <returns>System.Int32.</returns>
 		public int RowsInSection (UICollectionView collectionView, nint section)
 		{
-            if (collectionView == null)
+            if (Element.ItemsSource == null)
             {
                 return 0;
             }
