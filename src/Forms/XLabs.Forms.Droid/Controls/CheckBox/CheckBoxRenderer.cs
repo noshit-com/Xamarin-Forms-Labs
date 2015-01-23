@@ -36,7 +36,9 @@ namespace XLabs.Forms.Controls
 
 			Control.Text = e.NewElement.Text;
 			Control.Checked = e.NewElement.Checked;
-			Control.SetTextColor(e.NewElement.TextColor.ToAndroid());
+			if (e.NewElement.TextColor != Xamarin.Forms.Color.Default) {
+				Control.SetTextColor (e.NewElement.TextColor.ToAndroid ());
+			}
 
 			if (e.NewElement.FontSize > 0)
 			{
