@@ -26,7 +26,7 @@
 				<DataTemplate>
 					<ViewCell>
 						<ViewCell.View>
-							<controls:CheckBox DefaultText="{Binding}" CheckedText="{Binding}" UncheckedText="{Binding}" HorizontalOptions="FillAndExpand" TextColor="White" FontSize="25" />
+							<controls:CheckBox CheckedText="{Binding}" UncheckedText="{Binding}" HorizontalOptions="FillAndExpand" TextColor="Black" FontSize="25" />
 						</ViewCell.View>
 					</ViewCell>
 				</DataTemplate>

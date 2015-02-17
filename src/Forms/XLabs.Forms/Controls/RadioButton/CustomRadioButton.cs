@@ -5,6 +5,9 @@ namespace XLabs.Forms.Controls
 {
     public class CustomRadioButton : View
     {
+		/// <summary>
+		/// The default checked property.
+		/// </summary>
         public static readonly BindableProperty CheckedProperty =
             BindableProperty.Create<CustomRadioButton, bool>(
                 p => p.Checked, false);
@@ -21,20 +24,20 @@ namespace XLabs.Forms.Controls
         /// </summary>
         public static readonly BindableProperty TextColorProperty =
             BindableProperty.Create<CustomRadioButton, Color>(
-                p => p.TextColor, Color.Black);
+                p => p.TextColor, Color.Default);
 
         /// <summary>
         /// The font size property
         /// </summary>
         public static readonly BindableProperty FontSizeProperty =
-            BindableProperty.Create<CheckBox, double>(
+			BindableProperty.Create<CustomRadioButton, double>(
                 p => p.FontSize, -1);
 
         /// <summary>
         /// The font name property.
         /// </summary>
         public static readonly BindableProperty FontNameProperty =
-            BindableProperty.Create<CheckBox, string>(
+			BindableProperty.Create<CustomRadioButton, string>(
                 p => p.FontName, string.Empty);
 
         /// <summary>
@@ -63,6 +66,10 @@ namespace XLabs.Forms.Controls
             }
         }
 
+		/// <summary>
+		/// Gets or sets the control text value.
+		/// </summary>
+		/// <value>The text.</value>
         public string Text
         {
             get { return this.GetValue<string>(TextProperty); }
@@ -70,6 +77,10 @@ namespace XLabs.Forms.Controls
             set { SetValue(TextProperty, value); }
         }
 
+		/// <summary>
+		/// Gets or sets the control text color value.
+		/// </summary>
+		/// <value>The color of the text.</value>
         public Color TextColor
         {
             get { return this.GetValue<Color>(TextColorProperty); }
@@ -109,6 +120,10 @@ namespace XLabs.Forms.Controls
             }
         }
 
+		/// <summary>
+		/// Gets a value that can be used to uniquely identify the control element.
+		/// </summary>
+		/// <value>An int uniquely identifying the element.</value>
         public int Id { get; set; }
     }
 }

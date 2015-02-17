@@ -48,8 +48,10 @@ namespace XLabs.Forms.Controls
 			Control.CheckedTitle = string.IsNullOrEmpty(e.NewElement.CheckedText) ? e.NewElement.DefaultText : e.NewElement.CheckedText;
 			Control.UncheckedTitle = string.IsNullOrEmpty(e.NewElement.UncheckedText) ? e.NewElement.DefaultText : e.NewElement.UncheckedText;
 			Control.Checked = e.NewElement.Checked;
-			Control.SetTitleColor(e.NewElement.TextColor.ToUIColor(), UIControlState.Normal);
-			Control.SetTitleColor(e.NewElement.TextColor.ToUIColor(), UIControlState.Selected);
+			if (e.NewElement.TextColor != Xamarin.Forms.Color.Default) {
+				Control.SetTitleColor (e.NewElement.TextColor.ToUIColor (), UIControlState.Normal);
+				Control.SetTitleColor (e.NewElement.TextColor.ToUIColor (), UIControlState.Selected);
+			}
 		}
 
 		/// <summary>
@@ -123,8 +125,8 @@ namespace XLabs.Forms.Controls
 					Control.Checked = Element.Checked;
 					break;
 				case "TextColor":
-					Control.SetTitleColor(Element.TextColor.ToUIColor(), UIControlState.Normal);
-					Control.SetTitleColor(Element.TextColor.ToUIColor(), UIControlState.Selected);
+					Control.SetTitleColor (Element.TextColor.ToUIColor (), UIControlState.Normal);
+					Control.SetTitleColor (Element.TextColor.ToUIColor (), UIControlState.Selected);
 					break;
 				case "CheckedText":
 					Control.CheckedTitle = string.IsNullOrEmpty(Element.CheckedText) ? Element.DefaultText : Element.CheckedText;

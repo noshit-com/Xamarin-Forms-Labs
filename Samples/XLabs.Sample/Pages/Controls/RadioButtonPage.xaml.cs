@@ -14,16 +14,17 @@ namespace XLabs.Sample.Pages.Controls
         {
             InitializeComponent();
 
-            BackgroundColor = Color.Black;
+            //BackgroundColor = Color.Black;
 
-            ansPicker.ItemsSource = new[]
-            {
-                "Red",
-                "Blue",
-                "Green",
-                "Yellow",
-                "Orange"
-            };
+			Array colorRadioButtons = new[] {
+				new CustomRadioButton { Text = "Red" },
+				new CustomRadioButton { Text = "Blue"},
+				new CustomRadioButton { Text = "Green"},
+				new CustomRadioButton { Text = "Yellow"},
+				new CustomRadioButton { Text = "Orange"}
+			};
+
+			ansPicker.ItemsSource = colorRadioButtons;
 
             ansPicker.CheckedChanged += ansPicker_CheckedChanged;
         }

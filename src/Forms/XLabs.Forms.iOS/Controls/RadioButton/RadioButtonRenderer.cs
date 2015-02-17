@@ -38,8 +38,13 @@ namespace XLabs.Forms.Controls
             Control.VerticalAlignment = UIControlContentVerticalAlignment.Center;
             Control.Text = e.NewElement.Text;
             Control.Checked = e.NewElement.Checked;
-            Control.SetTitleColor(e.NewElement.TextColor.ToUIColor(), UIControlState.Normal);
-            Control.SetTitleColor(e.NewElement.TextColor.ToUIColor(), UIControlState.Selected);
+			if (e.NewElement.TextColor != Xamarin.Forms.Color.Default) {
+				Control.SetTitleColor (e.NewElement.TextColor.ToUIColor (), UIControlState.Normal);
+				Control.SetTitleColor (e.NewElement.TextColor.ToUIColor (), UIControlState.Selected);
+			} else {
+				Control.SetTitleColor (UIColor.Black, UIControlState.Normal);
+				Control.SetTitleColor (UIColor.Black, UIControlState.Selected);
+			}
         }
 
         private void ResizeText()
@@ -106,9 +111,9 @@ namespace XLabs.Forms.Controls
                 case "Text":
                     Control.Text = Element.Text;
                     break;
-                case "TextColor":
-                    Control.SetTitleColor(Element.TextColor.ToUIColor(), UIControlState.Normal);
-                    Control.SetTitleColor(Element.TextColor.ToUIColor(), UIControlState.Selected);
+				case "TextColor":
+					Control.SetTitleColor (Element.TextColor.ToUIColor (), UIControlState.Normal);
+					Control.SetTitleColor (Element.TextColor.ToUIColor (), UIControlState.Selected);
                     break;
                 case "Element":
                     break;
