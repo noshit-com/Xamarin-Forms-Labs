@@ -11,7 +11,7 @@
   </ContentPage.Padding>
 
   <Grid>
-    <controls:BindableRadioGroup Grid.Row="1" x:Name="ansPicker" SelectedIndex="{Binding ItemSelected}" TextColor="White" FontName="AmericanTypewriter"
+    <controls:BindableRadioGroup Grid.Row="1" x:Name="ansPicker" SelectedIndex="{Binding ItemSelected}" FontName="AmericanTypewriter"
                             VerticalOptions="Start" />
   </Grid>
 
