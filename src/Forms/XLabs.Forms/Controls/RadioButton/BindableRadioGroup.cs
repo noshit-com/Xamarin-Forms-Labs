@@ -42,21 +42,21 @@ namespace XLabs.Forms.Controls
 		/// The text color property.
 		/// </summary>
         public static readonly BindableProperty TextColorProperty =
-            BindableProperty.Create<CheckBox, Color>(
+			BindableProperty.Create<BindableRadioGroup, Color>(
                 p => p.TextColor, Color.Default);
 
         /// <summary>
         /// The font size property
         /// </summary>
         public static readonly BindableProperty FontSizeProperty =
-            BindableProperty.Create<CheckBox, double>(
+			BindableProperty.Create<BindableRadioGroup, double>(
                 p => p.FontSize, -1);
 
         /// <summary>
         /// The font name property.
         /// </summary>
         public static readonly BindableProperty FontNameProperty =
-            BindableProperty.Create<CheckBox, string>(
+			BindableProperty.Create<BindableRadioGroup, string>(
                 p => p.FontName, string.Empty);
 
 		/// <summary>

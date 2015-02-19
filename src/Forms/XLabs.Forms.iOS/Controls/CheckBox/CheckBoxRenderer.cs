@@ -51,6 +51,9 @@ namespace XLabs.Forms.Controls
 			if (e.NewElement.TextColor != Xamarin.Forms.Color.Default) {
 				Control.SetTitleColor (e.NewElement.TextColor.ToUIColor (), UIControlState.Normal);
 				Control.SetTitleColor (e.NewElement.TextColor.ToUIColor (), UIControlState.Selected);
+			} else {
+				Control.SetTitleColor (UIColor.Black, UIControlState.Normal);
+				Control.SetTitleColor (UIColor.Black, UIControlState.Selected);
 			}
 		}
 
