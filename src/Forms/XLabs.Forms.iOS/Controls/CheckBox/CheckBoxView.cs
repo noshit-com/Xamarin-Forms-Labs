@@ -62,7 +62,6 @@ namespace XLabs.Forms.Controls
 			set { Selected = value; }
 			get { return Selected; }
 		}
-
 		/// <summary>
 		/// Initializes this instance.
 		/// </summary>
@@ -71,7 +70,7 @@ namespace XLabs.Forms.Controls
 			AdjustEdgeInsets();
 			ApplyStyle();
 
-			TouchUpInside += (sender, args) => Selected = !Selected;
+			TouchUpInside += CheckBoxClicked;
 		}
 
 		/// <summary>
@@ -93,6 +92,19 @@ namespace XLabs.Forms.Controls
 		{
 			SetImage(UIImage.FromBundle("Images/CheckBox/checked_checkbox.png"), UIControlState.Selected);
 			SetImage(UIImage.FromBundle("Images/CheckBox/unchecked_checkbox.png"), UIControlState.Normal);
+		}
+
+		void CheckBoxClicked (object sender, System.EventArgs args)
+		{
+			Selected = !Selected;
+		}
+
+		/// <summary>
+		/// Removes the click event.
+		/// </summary>
+		public void RemoveClickEvent()
+		{
+			this.TouchUpInside -= CheckBoxClicked;
 		}
 	}
 }

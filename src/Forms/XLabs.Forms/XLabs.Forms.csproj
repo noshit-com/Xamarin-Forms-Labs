@@ -54,7 +54,6 @@
     <Compile Include="Controls\CalendarView.cs" />
     <Compile Include="Controls\CameraView.cs" />
     <Compile Include="Controls\CarouselView.cs" />
-    <Compile Include="Controls\CheckBox.cs" />
     <Compile Include="Controls\CheckboxCell.cs" />
     <Compile Include="Controls\CircleImage.cs" />
     <Compile Include="Controls\CollectionChangedHandle.cs" />
@@ -141,6 +140,8 @@
     <Compile Include="Validation\Validator.cs" />
     <Compile Include="Validation\ValidatorPredicate.cs" />
     <Compile Include="Validation\Validators.cs" />
+    <Compile Include="Controls\CheckBox\CheckBox.cs" />
+    <Compile Include="Controls\CheckBox\BindableCheckBoxGroup.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\IOC\XLabs.Ioc\XLabs.Ioc.csproj">
